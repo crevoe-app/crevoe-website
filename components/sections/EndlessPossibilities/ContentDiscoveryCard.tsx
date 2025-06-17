@@ -67,6 +67,29 @@ const ContentDiscoveryCard = () => {
             ))}
           </div>
         </motion.div>
+        <motion.img
+          className="absolute -left-6 -top-6 w-12 h-12 object-cover"
+          src="./assets/GreenStar.svg"
+          alt="Content Discovery Background"
+          variants={{
+            initial: { opacity: 0, scale: 0.8, x: 0 },
+            hover: { opacity: 1, scale: 1, }
+          }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+        />
+
+        <motion.img
+          className="absolute -right-10 -top-28 w-32 h-32 object-cover -z-50"
+          src="./assets/PinkStar.svg"
+          alt="Content Discovery Background"
+          variants={{
+            initial: { opacity: 0, scale: 0.8, x: 0, y: 0 },
+            hover: { opacity: 1, scale: 1, y: -40 }
+          }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+        />
       </div>
     </motion.div>
   );

@@ -69,7 +69,7 @@ const HeroSection: React.FC = () => {
             </div>
           </FloatingElement>
 
-          <FloatingElement className="top-40 right-20" delay={0.4}>
+          <FloatingElement className="top-60 right-40" delay={0.4}>
             <div className="bg-transparent border border-primary-200 px-2 pr-6 py-2 rounded-lg flex items-center gap-2 shadow-lg">
               <div className='bg-[#DCF4FF] p-2 rounded-lg'>
                 <ShoppingBag size={20} className='text-[#01B8C7]' stroke='#01B8C7' />
@@ -77,6 +77,11 @@ const HeroSection: React.FC = () => {
               <span className="font-medium">Marketplace</span>
             </div>
           </FloatingElement>
+
+          <motion.img
+            className='absolute top-32 right-14'
+            src={"./assets/PinkStar.svg"}
+          />
 
           <FloatingElement className="bottom-40 left-20" delay={0.6}>
             <div className="bg-transparent border border-primary-200 px-2 pr-6 py-2 rounded-lg flex items-center gap-2 shadow-lg">
@@ -95,20 +100,6 @@ const HeroSection: React.FC = () => {
               <span className="font-medium">Social feeds</span>
             </div>
           </FloatingElement>
-        </div>
-
-        {/* Decorative Elements - Hidden on mobile */}
-        <div className="hidden md:block">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-20 right-10 w-4 h-4 bg-pink-300 rounded-full opacity-60"
-          />
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-20 left-5 w-6 h-6 bg-yellow-300 rounded-full opacity-60"
-          />
         </div>
       </div>
     </section>

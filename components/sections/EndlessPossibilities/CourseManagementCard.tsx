@@ -5,7 +5,7 @@ const CourseManagementCard = () => {
   return (
     <div className="w-full">
       <motion.div
-        className="bg-primary-600 rounded-3xl shadow-2xl relative h-[80vh] p-8"
+        className="bg-[#0073B4] rounded-3xl shadow-2xl relative h-[80vh] p-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
