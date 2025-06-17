@@ -58,7 +58,6 @@ const HeroSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Floating Elements - Hidden on mobile */}
         <div className="hidden lg:block">
           <FloatingElement className="top-32 left-64" delay={0.2}>
             <div className="bg-transparent border border-primary-200 px-2 pr-6 py-2 rounded-lg flex items-center gap-2 shadow-lg">
