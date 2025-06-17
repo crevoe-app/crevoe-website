@@ -15,21 +15,42 @@ const FeaturesSection: React.FC = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-8 lg:mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
           Explore endless possibilities.
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
           Everything you need to teach, learn, and grow — built into one beautiful platform.
         </p>
       </motion.div>
-      <div className='flex gap-4 items-stretch h-[80vh]'>
+
+      {/* Mobile Layout (< lg) */}
+      <div className='lg:hidden flex flex-col gap-4'>
+        <div className='w-full'>
+          <CourseManagementCard />
+        </div>
+        <div className='w-full mb-6'>
+          <VideoConferencingCard />
+        </div>
+        <div className='w-full'>
+          <CommunityCard />
+        </div>
+        <div className='w-full'>
+          <EventSchedulingCard />
+        </div>
+        <div className='w-full'>
+          <ContentDiscoveryCard />
+        </div>
+      </div>
+
+      {/* Desktop Layout (>= lg) */}
+      <div className='hidden lg:flex gap-4 items-stretch h-[80vh]'>
         <div className='basis-[25%] h-full'>
           <CourseManagementCard />
         </div>
         <div className='h-full flex-1 flex flex-col justify-between items-center gap-4'>
-          <div className='flex items-start justify-between gap-4 space-y-4 basis-6/12'>
+          <div className='flex items-start justify-between gap-4 basis-6/12 w-full'>
             <div className='basis-8/12'>
               <VideoConferencingCard />
             </div>
@@ -37,7 +58,7 @@ const FeaturesSection: React.FC = () => {
               <CommunityCard />
             </div>
           </div>
-          <div className='flex items-stetch justify-between gap-2 flex-1'>
+          <div className='flex items-stretch justify-between gap-4 flex-1 w-full'>
             <div className='basis-4/12'>
               <EventSchedulingCard />
             </div>
