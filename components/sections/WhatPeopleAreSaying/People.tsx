@@ -47,13 +47,13 @@ const people: Person[] = [
     rotation: "-rotate-1",
     description: "Bridging the gap between traditional education and modern learning through interactive experiences and community building."
   },
-  {
-    id: 6,
-    name: "Jordan Davis",
-    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
-    rotation: "rotate-1",
-    description: "Fostering creativity and critical thinking through collaborative learning environments that inspire lifelong learning habits."
-  }
+  // {
+  //   id: 6,
+  //   name: "Jordan Davis",
+  //   image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+  //   rotation: "rotate-1",
+  //   description: "Fostering creativity and critical thinking through collaborative learning environments that inspire lifelong learning habits."
+  // }
 ];
 
 const People = () => {
@@ -81,8 +81,8 @@ const People = () => {
 
 
   return (
-    <div className="flex items-center justify-center p-8">
-      <div className="flex items-center justify-center gap-0 w-full mx-auto">
+    <div className="flex items-center justify-center p-4 sm:p-8">
+      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-0 w-full mx-auto">
         {people.map((person, index) => (
           <PersonCard
             key={person.id}

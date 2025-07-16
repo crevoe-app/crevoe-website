@@ -14,7 +14,6 @@ interface PersonCardProps {
   index: number;
   onClick: () => void;
 }
-
 export default function PersonCard({ person, index, onClick }: PersonCardProps) {
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -24,6 +23,7 @@ export default function PersonCard({ person, index, onClick }: PersonCardProps) 
         relative group cursor-pointer transition-all duration-300 ease-out
         ${person.rotation}
         hover:rotate-0 hover:scale-105 hover:z-10
+        w-[120px] sm:w-56
       `}
       style={{
         animationDelay: `${index * 100}ms`
@@ -33,7 +33,7 @@ export default function PersonCard({ person, index, onClick }: PersonCardProps) 
       onMouseLeave={() => setShowTooltip(false)}
     >
       {showTooltip && (
-        <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="hidden sm:block absolute -top-12 left-1/2 transform -translate-x-1/2 z-20">
           <div className="bg-white px-4 py-2 rounded-lg shadow-lg border border-gray-200 whitespace-nowrap">
             <span className="text-gray-900 font-medium">{person.name}</span>
             <div className="absolute top-full left-1/2 transform -translate-x-1/2">
@@ -44,7 +44,7 @@ export default function PersonCard({ person, index, onClick }: PersonCardProps) 
       )}
 
       <div className="relative overflow-hidden rounded shadow-lg hover:shadow-2xl transition-all duration-300">
-        <div className="w-56 h-72 bg-white">
+        <div className="w-[120px] h-[150px] sm:w-56 sm:h-72 bg-white">
           <div className="w-full h-full rounded overflow-hidden bg-[#FEF2F2]">
             <motion.img
               src={person.image}
