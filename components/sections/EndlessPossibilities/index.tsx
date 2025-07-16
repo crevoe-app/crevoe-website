@@ -50,11 +50,11 @@ const FeaturesSection: React.FC = () => {
           <CourseManagementCard />
         </div>
         <div className='h-full flex-1 flex flex-col justify-between items-center gap-4'>
-          <div className='flex items-start justify-between gap-4 basis-6/12 w-full'>
+          <div className='flex items-center justify-between gap-4 basis-6/12 w-full'>
             <div className='basis-8/12'>
               <VideoConferencingCard />
             </div>
-            <div className='flex-1'>
+            <div className='flex-1 mt-2'>
               <CommunityCard />
             </div>
           </div>

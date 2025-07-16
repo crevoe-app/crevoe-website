@@ -2,6 +2,7 @@
 import FeaturesSection from "@/components/sections/EndlessPossibilities";
 import HeroSection from "@/components/HeroSection";
 import { Header } from "@/components/Header";
+import LearnTerms from "@/components/sections/LearnTerms";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <FeaturesSection />
+      <LearnTerms />
     </div>
   );
 }

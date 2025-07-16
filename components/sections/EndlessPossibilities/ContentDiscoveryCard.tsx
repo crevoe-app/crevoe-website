@@ -21,6 +21,12 @@ const ContentDiscoveryCard = () => {
       name: 'Adarabioyo Joseph',
       email: 'johnadeyo@crevoe.com',
       avatar: '👨🏿‍💼'
+    },
+    {
+      id: 4,
+      name: 'Adarabioyo Joseph',
+      email: 'johnadeyo@crevoe.com',
+      avatar: '👨🏿‍💼'
     }
   ];
 
@@ -73,7 +79,7 @@ const ContentDiscoveryCard = () => {
           alt="Content Discovery Background"
           variants={{
             initial: { opacity: 0, scale: 0.8, x: 0 },
-            hover: { opacity: 1, scale: 1 }
+            hover: { opacity: 1, scale: 1.8 }
           }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
@@ -85,7 +91,7 @@ const ContentDiscoveryCard = () => {
           alt="Content Discovery Background"
           variants={{
             initial: { opacity: 0, scale: 0.8, x: 0, y: 0 },
-            hover: { opacity: 1, scale: 1, y: -40 }
+            hover: { opacity: 1, scale: 1.5, y: -40 }
           }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
