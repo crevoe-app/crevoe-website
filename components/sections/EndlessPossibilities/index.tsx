@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 const FeaturesSection: React.FC = () => {
 
   return (
-    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 relative">
       <motion.div
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

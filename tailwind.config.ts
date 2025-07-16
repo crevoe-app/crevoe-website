@@ -24,6 +24,15 @@ const config: Config = {
           "950": "#072f4a",
         },
       },
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-50% - var(--gap)))" },
+        },
+      },
     },
   },
   plugins: [],

@@ -3,6 +3,10 @@ import FeaturesSection from "@/components/sections/EndlessPossibilities";
 import HeroSection from "@/components/HeroSection";
 import { Header } from "@/components/Header";
 import LearnTerms from "@/components/sections/LearnTerms";
+import EverythingYouNeed from "@/components/sections/EverythingYouNeed";
+import WhatPeopleAreSaying from "@/components/sections/WhatPeopleAreSaying";
+import Faq from "@/components/sections/Faq";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -11,6 +15,10 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <LearnTerms />
+      <EverythingYouNeed />
+      <WhatPeopleAreSaying />
+      <Faq />
+      <Footer />
     </div>
   );
 }
