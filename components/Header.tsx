@@ -1,15 +1,19 @@
 "use client"
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import AnimatedLogo from './AnimatedLogo';
 import Link from 'next/link';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <motion.header
@@ -28,13 +32,31 @@ export const Header = () => {
           </motion.div>
 
           <nav className="hidden md:flex items-center justify-center space-x-8 basis-4/12">
-            <Link href="/how-it-works" className="text-gray-700 hover:text-primary-500 transition-colors">
+            <Link
+              href="/how-it-works"
+              className={`transition-colors ${isActive('/how-it-works')
+                ? 'text-primary-500'
+                : 'text-gray-700 hover:text-primary-500'
+                }`}
+            >
               How it works
             </Link>
-            <Link href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
+            <Link
+              href="/pricing"
+              className={`transition-colors ${isActive('/pricing')
+                ? 'text-primary-500'
+                : 'text-gray-700 hover:text-primary-500'
+                }`}
+            >
               Pricing
             </Link>
-            <Link href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
+            <Link
+              href="#"
+              className={`transition-colors ${isActive('/blog')
+                ? 'text-primary-500'
+                : 'text-gray-700 hover:text-primary-500'
+                }`}
+            >
               Blog
             </Link>
           </nav>
@@ -94,21 +116,30 @@ export const Header = () => {
               <div className="px-2 pt-2 pb-3 space-y-1">
                 <Link
                   href="/how-it-works"
-                  className="block py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
+                  className={`block py-2 hover:bg-gray-50 rounded-md transition-colors ${isActive('/how-it-works')
+                      ? 'text-primary-500'
+                      : 'text-gray-700 hover:text-primary-500'
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   How it works
                 </Link>
                 <Link
-                  href="#"
-                  className="block py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
+                  href="/pricing"
+                  className={`block py-2 hover:bg-gray-50 rounded-md transition-colors ${isActive('/pricing')
+                      ? 'text-primary-500'
+                      : 'text-gray-700 hover:text-primary-500'
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Pricing
                 </Link>
                 <Link
                   href="#"
-                  className="block py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
+                  className={`block py-2 hover:bg-gray-50 rounded-md transition-colors ${isActive('/blog')
+                      ? 'text-primary-500'
+                      : 'text-gray-700 hover:text-primary-500'
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog
