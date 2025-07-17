@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedLogo from './AnimatedLogo';
+import Link from 'next/link';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,11 +26,14 @@ export const Header = () => {
           </motion.div>
 
           <nav className="hidden md:flex items-center justify-center space-x-8 basis-4/12">
-            <a href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
+            <Link href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
               How it works
-            </a>
+            </Link>
             <a href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
               Pricing
+            </a>
+            <a href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
+              Blog
             </a>
           </nav>
 
@@ -99,6 +103,13 @@ export const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Pricing
+                </a>
+                <a
+                  href="#"
+                  className="block py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
                 </a>
 
                 {/* Mobile Buttons */}
