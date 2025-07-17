@@ -146,16 +146,16 @@ const PricingComparison = () => {
             {/* Header Row */}
             <div className="grid grid-cols-5 gap-0 mb-0">
               <div className="bg-gray-100 p-4 border-r border-gray-200"></div>
-              <div className="bg-blue-500 p-4 text-center border-r border-blue-400">
+              <div className="bg-primary-500 p-4 text-center border-r border-primary-400">
                 <span className="font-semibold text-white">Basic</span>
               </div>
-              <div className="bg-blue-500 p-4 text-center border-r border-blue-400">
+              <div className="bg-primary-500 p-4 text-center border-r border-primary-400">
                 <span className="font-semibold text-white">Advance</span>
               </div>
-              <div className="bg-blue-500 p-4 text-center border-r border-blue-400">
+              <div className="bg-primary-500 p-4 text-center border-r border-primary-400">
                 <span className="font-semibold text-white">Advance</span>
               </div>
-              <div className="bg-pink-400 p-4 text-center relative">
+              <div className="bg-red-400 p-4 text-center relative">
                 <span className="font-semibold text-white">Plan</span>
                 <div className="absolute top-2 right-2">
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -187,7 +187,7 @@ const PricingComparison = () => {
                 <div className="p-4 border-r border-gray-200 text-center">
                   {renderCell(feature.advance2)}
                 </div>
-                <div className="p-4 text-center bg-pink-100">
+                <div className="p-4 text-center bg-red-100">
                   {renderCell(feature.plan, false, true)}
                 </div>
               </motion.div>

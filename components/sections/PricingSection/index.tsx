@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface PricingPlan {
   name: string;
@@ -88,7 +89,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section className="py-8 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -135,92 +136,94 @@ const PricingSection = () => {
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative bg-white rounded-2xl shadow-lg p-6 lg:p-8 ${plan.isPopular
-                ? 'bg-[#0aa5ed] text-white transform scale-105'
-                : 'hover:shadow-xl transition-shadow duration-300'
-                }`}
-            >
-              {/* Popular Badge */}
-              {plan.isPopular && (
-                <div className="absolute -top-3 -right-3">
-                  <Image
-                    src="/popular.png"
-                    alt="Popular"
-                    width={80}
-                    height={80}
-                    className="w-16 h-16 sm:w-20 sm:h-20"
-                  />
-                </div>
-              )}
-
-              {/* Plan Name */}
-              <h3 className={`text-xl font-bold mb-2 ${plan.isHighlighted ? 'text-white' : 'text-gray-900'
-                }`}>
-                {plan.name}
-              </h3>
-
-              {/* Price */}
-              <div className="mb-4">
-                <span className={`text-4xl font-bold ${plan.isHighlighted ? 'text-white' : 'text-gray-900'
-                  }`}>
-                  {isAnnual ? plan.annualPrice : plan.monthlyPrice}
-                </span>
-                <span className={`text-lg ${plan.isHighlighted ? 'text-white/80' : 'text-gray-500'
-                  }`}>
-                  {isAnnual ? '/year' : '/month'}
-                </span>
-              </div>
-
-              {/* Description */}
-              <p className={`text-sm mb-6 ${plan.isHighlighted ? 'text-white/80' : 'text-gray-600'
-                }`}>
-                {plan.description}
-              </p>
-
-              {/* Features */}
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3">
-                    <svg
-                      className={`w-5 h-5 mt-0.5 flex-shrink-0 ${plan.isHighlighted ? 'text-white' : 'text-green-500'
-                        }`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span className={`text-sm ${plan.isHighlighted ? 'text-white/90' : 'text-gray-600'
-                      }`}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA Button */}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full py-3 px-6 rounded-sm font-semibold transition-colors duration-200 ${plan.isHighlighted
-                  ? 'bg-white text-primary-600 hover:bg-gray-50'
-                  : 'bg-primary-500 text-white hover:bg-primary-600'
-                  }`}
+          {plans.map((plan, index) => {
+            console.log({ plan })
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={cn(`relative bg-white rounded-2xl shadow-lg p-6 lg:p-8 hover:shadow-xl transition-shadow duration-300}`,
+                  plan.isPopular && "bg-[#0aa5ed] text-white transform scale-105")}
               >
-                {plan.buttonText}
-              </motion.button>
-            </motion.div>
-          ))}
+                {/* Popular Badge */}
+                {plan.isPopular && (
+                  <div className="absolute -top-3 -right-3">
+                    <Image
+                      src="/popular.png"
+                      alt="Popular"
+                      width={80}
+                      height={80}
+                      className="w-16 h-16 sm:w-20 sm:h-20"
+                    />
+                  </div>
+                )}
+
+                {/* Plan Name */}
+                <h3 className={`text-xl font-bold mb-2 ${plan.isHighlighted ? 'text-white' : 'text-gray-900'
+                  }`}>
+                  {plan.name}
+                </h3>
+
+                {/* Price */}
+                <div className="mb-4">
+                  <span className={`text-4xl font-bold ${plan.isHighlighted ? 'text-white' : 'text-gray-900'
+                    }`}>
+                    {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                  </span>
+                  <span className={`text-lg ${plan.isHighlighted ? 'text-white/80' : 'text-gray-500'
+                    }`}>
+                    {isAnnual ? '/year' : '/month'}
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className={`text-sm mb-6 ${plan.isHighlighted ? 'text-white/80' : 'text-gray-600'
+                  }`}>
+                  {plan.description}
+                </p>
+
+                {/* Features */}
+                <ul className="space-y-3 mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <svg
+                        className={`w-5 h-5 mt-0.5 flex-shrink-0 ${plan.isHighlighted ? 'text-white' : 'text-green-500'
+                          }`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span className={`text-sm ${plan.isHighlighted ? 'text-white/90' : 'text-gray-600'
+                        }`}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full py-3 px-6 rounded-sm font-semibold transition-colors duration-200 ${plan.isHighlighted
+                    ? 'bg-white text-primary-600 hover:bg-gray-50'
+                    : 'bg-primary-500 text-white hover:bg-primary-600'
+                    }`}
+                >
+                  {plan.buttonText}
+                </motion.button>
+              </motion.div>
+            )
+          }
+          )}
         </div>
       </div>
     </section>
