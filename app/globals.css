@@ -78,6 +78,16 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Skill category colors */
+  --skill-entertainment: 45 100% 80%;
+  --skill-culinary: 120 65% 85%;
+  --skill-active: 180 65% 85%;
+  --skill-dental: 330 80% 85%;
+  --skill-training: 40 100% 90%;
+  --skill-personal: 120 65% 85%;
+  --skill-mental: 330 80% 85%;
+  --skill-pets: 180 65% 85%;
 }
 
 .dark {

@@ -10,7 +10,7 @@ const CreateMarketSell = () => {
   ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto">
       {/* Header Section */}
       <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">

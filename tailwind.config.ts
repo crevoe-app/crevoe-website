@@ -23,6 +23,16 @@ const config: Config = {
           "900": "#0a4970",
           "950": "#072f4a",
         },
+        skill: {
+          entertainment: "hsl(var(--skill-entertainment))",
+          culinary: "hsl(var(--skill-culinary))",
+          active: "hsl(var(--skill-active))",
+          dental: "hsl(var(--skill-dental))",
+          training: "hsl(var(--skill-training))",
+          personal: "hsl(var(--skill-personal))",
+          mental: "hsl(var(--skill-mental))",
+          pets: "hsl(var(--skill-pets))",
+        },
       },
       animation: {
         marquee: "marquee var(--duration) linear infinite",

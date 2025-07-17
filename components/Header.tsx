@@ -112,7 +112,7 @@ export const Header = () => {
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-primary-500 font-semibold text-white py-3 rounded-full hover:bg-primary-600 border border-primary-600 transition-colors"
+                    className="w-full bg-primary-500 font-semibold text-white py-3 rounded-full hover:bg-primary-600 border border-primary-400 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Create Account
