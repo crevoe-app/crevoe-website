@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import AnimatedLogo from '@/components/AnimatedLogo'
 import Link from 'next/link'
@@ -70,4 +71,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

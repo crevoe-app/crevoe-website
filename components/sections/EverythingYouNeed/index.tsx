@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const EverythingYouNeed = () => {
   return (
-    <div className="min-h-screen bg-[#001521] py-8 sm:py-12 lg:py-16 w-full relative overflow-hidden">
+    <div className="min-h-screen bg-[#001521] py-8 sm:py-12 lg:py-16  relative overflow-hidden">
       {/* Background Image */}
       <motion.div
         className="absolute right-0 top-0 w-1/2 sm:w-1/3 lg:w-1/4 opacity-30 sm:opacity-50 lg:opacity-100"
@@ -17,7 +17,7 @@ const EverythingYouNeed = () => {
         <div className="w-full h-96 bg-gradient-to-l from-pink-500/20 to-transparent rounded-l-full"></div>
       </motion.div>
 
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <motion.h2

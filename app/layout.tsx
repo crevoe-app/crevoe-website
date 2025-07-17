@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Karla } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/sections/Footer";
 import "./globals.css";
 
 const karla = Karla({
@@ -22,7 +24,13 @@ export default function RootLayout({
       <body
         className={`${karla.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <main className="flex min-h-screen flex-col">
+          <div className="pt-24 flex-1">
+            {children}
+          </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );
