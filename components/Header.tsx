@@ -18,23 +18,25 @@ export const Header = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-gray-200"
     >
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <motion.div className="flex items-center flex-shrink-0 basis-4/12">
-            <AnimatedLogo animateOnHover />
+            <Link href="/">
+              <AnimatedLogo animateOnHover />
+            </Link>
           </motion.div>
 
           <nav className="hidden md:flex items-center justify-center space-x-8 basis-4/12">
-            <Link href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
+            <Link href="/how-it-works" className="text-gray-700 hover:text-primary-500 transition-colors">
               How it works
             </Link>
-            <a href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
+            <Link href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
               Pricing
-            </a>
-            <a href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
+            </Link>
+            <Link href="#" className="text-gray-700 hover:text-primary-500 transition-colors">
               Blog
-            </a>
+            </Link>
           </nav>
 
           {/* Desktop Buttons */}
@@ -90,27 +92,27 @@ export const Header = () => {
               className="md:hidden border-t border-gray-200 bg-white"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                <a
-                  href="#"
+                <Link
+                  href="/how-it-works"
                   className="block py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   How it works
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="block py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Pricing
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="block py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog
-                </a>
+                </Link>
 
                 {/* Mobile Buttons */}
                 <div className="pt-4 space-y-3">
