@@ -1,7 +1,9 @@
 import React from 'react';
 import HowItWorksHero from '@/components/sections/HowItWorksHero';
 import HowItWorksSteps from '@/components/sections/HowItWorksSteps';
+import HowItWorksCTA from '@/components/sections/HowItWorksCTA';
 import { Metadata } from 'next';
+import Faq from '@/components/sections/Faq';
 
 export const metadata: Metadata = {
   title: 'How It Works | Crevoe',
@@ -59,8 +61,8 @@ const HowItWorks = () => {
     <>
       <HowItWorksHero {...heroContent} />
       <HowItWorksSteps {...stepsContent} />
-
-      {/* Call to action section will go here */}
+      <HowItWorksCTA />
+      <Faq />
     </>
   );
 };

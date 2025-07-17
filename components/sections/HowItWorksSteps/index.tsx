@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -22,68 +22,29 @@ const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({
   subtitle,
   steps
 }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
+  const [activeStep, setActiveStep] = useState(0);
 
-  const stepVariants = {
-    hidden: {
-      opacity: 0,
-      y: 60,
-      scale: 0.9
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut" as const
-      }
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const stepElements = document.querySelectorAll('[data-step]');
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-  const imageVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.8,
-      rotate: -5
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut" as const,
-        delay: 0.2
-      }
-    }
-  };
+      stepElements.forEach((element, index) => {
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top + window.scrollY;
+        const elementBottom = elementTop + rect.height;
 
-  const numberVariants = {
-    hidden: {
-      scale: 0,
-      rotate: -180
-    },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      transition: {
-        type: "spring" as const,
-        stiffness: 200,
-        damping: 15,
-        delay: 0.1
-      }
-    }
-  };
+        if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+          setActiveStep(index);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section className="py-16 lg:py-24 bg-white">
@@ -104,107 +65,148 @@ const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({
           </p>
         </motion.div>
 
-        {/* Steps */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="space-y-20 lg:space-y-32"
-        >
-          {steps.map((step, index) => (
+        {/* Steps with Timeline */}
+        <div className="relative">
+          {/* Timeline Line - Left Side */}
+          <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-1 bg-gray-200">
             <motion.div
-              key={step.number}
-              variants={stepVariants}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+              className="absolute top-0 left-0 w-full bg-primary-500 origin-top"
+              initial={{ scaleY: 0 }}
+              animate={{
+                scaleY: (activeStep + 1) / steps.length,
+                transition: { duration: 0.5, ease: "easeOut" }
+              }}
+            />
+          </div>
+
+          {/* Timeline Dots */}
+          {steps.map((_, index) => (
+            <motion.div
+              key={index}
+              className={`hidden lg:block absolute left-6 w-5 h-5 rounded-full transition-colors duration-300 ${index <= activeStep ? 'bg-primary-500' : 'bg-gray-300'
                 }`}
-            >
-              {/* Content */}
-              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <motion.div
-                  variants={numberVariants}
-                  className="inline-flex items-center justify-center w-16 h-16 bg-primary-500 text-white text-2xl font-bold rounded-full mb-4"
-                >
-                  {step.number}
-                </motion.div>
+              style={{
+                top: `${(index * 100) / (steps.length - 1)}%`,
+                transform: 'translateY(-50%)'
+              }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+            />
+          ))}
 
-                <motion.h3
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
-                >
-                  {step.title}
-                </motion.h3>
-
-                <motion.p
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-lg text-gray-600 leading-relaxed"
-                >
-                  {step.description}
-                </motion.p>
-              </div>
-
-              {/* Image */}
+          {/* Steps Content */}
+          <div className="lg:ml-20 space-y-32">
+            {steps.map((step, index) => (
               <motion.div
-                variants={imageVariants}
-                className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}
+                key={step.number}
+                data-step={index}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  }`}
               >
+                {/* Content */}
+                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  {/* Step Badge */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4"
+                  >
+                    Step {step.number}
+                  </motion.div>
+
+                  <motion.h3
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight"
+                  >
+                    {step.title}
+                  </motion.h3>
+
+                  <motion.p
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="text-lg text-gray-600 leading-relaxed"
+                  >
+                    {step.description}
+                  </motion.p>
+                </div>
+
+                {/* Image */}
                 <motion.div
-                  whileHover={{
-                    scale: 1.02,
-                    transition: { duration: 0.3 }
+                  initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 1,
+                    ease: "easeOut" as const,
+                    delay: 0.2
                   }}
-                  className="relative w-full h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl"
+                  className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}
                 >
-                  <Image
-                    src={step.imageSrc}
-                    alt={step.imageAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                  <motion.div
+                    whileHover={{
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
+                    }}
+                    className="relative w-full h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl"
+                  >
+                    <Image
+                      src={step.imageSrc}
+                      alt={step.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+
+                    {/* Overlay gradient for better visual appeal */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                  </motion.div>
+
+                  {/* Decorative elements */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.8,
+                      type: "spring" as const,
+                      stiffness: 200
+                    }}
+                    className={`absolute -top-4 ${index % 2 === 0 ? '-right-4' : '-left-4'
+                      } w-8 h-8 bg-primary-500 rounded-full opacity-20`}
                   />
 
-                  {/* Overlay gradient for better visual appeal */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 1,
+                      type: "spring" as const,
+                      stiffness: 200
+                    }}
+                    className={`absolute -bottom-6 ${index % 2 === 0 ? '-left-6' : '-right-6'
+                      } w-12 h-12 bg-pink-400 rounded-full opacity-15`}
+                  />
                 </motion.div>
-
-                {/* Decorative elements */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.8,
-                    type: "spring",
-                    stiffness: 200
-                  }}
-                  className={`absolute -top-4 ${index % 2 === 0 ? '-right-4' : '-left-4'
-                    } w-8 h-8 bg-primary-500 rounded-full opacity-20`}
-                />
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 1,
-                    type: "spring",
-                    stiffness: 200
-                  }}
-                  className={`absolute -bottom-6 ${index % 2 === 0 ? '-left-6' : '-right-6'
-                    } w-12 h-12 bg-pink-400 rounded-full opacity-15`}
-                />
               </motion.div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* Bottom CTA */}
         <motion.div
