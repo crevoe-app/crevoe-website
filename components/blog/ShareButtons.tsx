@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 interface ShareButtonsProps {
@@ -17,13 +17,13 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title }) => {
     <div className="flex items-center space-x-4">
       <p className="text-lg font-semibold">Share this article:</p>
       <a href={twitterShareUrl} target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
-        <FaTwitter className="w-6 h-6 text-gray-600 hover:text-blue-500 transition-colors" />
+        <FaTwitter className="w-6 h-6 text-gray-600 hover:text-primary-500 transition-colors" />
       </a>
       <a href={facebookShareUrl} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
-        <FaFacebook className="w-6 h-6 text-gray-600 hover:text-blue-700 transition-colors" />
+        <FaFacebook className="w-6 h-6 text-gray-600 hover:text-primary-700 transition-colors" />
       </a>
       <a href={linkedinShareUrl} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
-        <FaLinkedin className="w-6 h-6 text-gray-600 hover:text-blue-600 transition-colors" />
+        <FaLinkedin className="w-6 h-6 text-gray-600 hover:text-primary-600 transition-colors" />
       </a>
     </div>
   );
