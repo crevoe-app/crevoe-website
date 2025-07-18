@@ -51,7 +51,7 @@ export const Header = () => {
               Pricing
             </Link>
             <Link
-              href="#"
+              href="/blog"
               className={`transition-colors ${isActive('/blog')
                 ? 'text-primary-500'
                 : 'text-gray-700 hover:text-primary-500'
@@ -117,8 +117,8 @@ export const Header = () => {
                 <Link
                   href="/how-it-works"
                   className={`block py-2 hover:bg-gray-50 rounded-md transition-colors ${isActive('/how-it-works')
-                      ? 'text-primary-500'
-                      : 'text-gray-700 hover:text-primary-500'
+                    ? 'text-primary-500'
+                    : 'text-gray-700 hover:text-primary-500'
                     }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -127,18 +127,18 @@ export const Header = () => {
                 <Link
                   href="/pricing"
                   className={`block py-2 hover:bg-gray-50 rounded-md transition-colors ${isActive('/pricing')
-                      ? 'text-primary-500'
-                      : 'text-gray-700 hover:text-primary-500'
+                    ? 'text-primary-500'
+                    : 'text-gray-700 hover:text-primary-500'
                     }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Pricing
                 </Link>
                 <Link
-                  href="#"
+                  href="/blog"
                   className={`block py-2 hover:bg-gray-50 rounded-md transition-colors ${isActive('/blog')
-                      ? 'text-primary-500'
-                      : 'text-gray-700 hover:text-primary-500'
+                    ? 'text-primary-500'
+                    : 'text-gray-700 hover:text-primary-500'
                     }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
