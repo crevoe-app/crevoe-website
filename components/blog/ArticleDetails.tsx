@@ -1,6 +1,10 @@
+"use client";
+
 import { Article } from "@/lib/types/blog";
 import { format } from 'date-fns';
 import Image from 'next/image';
+
+import ShareButtons from "./ShareButtons";
 
 interface ArticleDetailsProps {
   article: Article;
@@ -20,6 +24,9 @@ const ArticleDetails: React.FC<ArticleDetailsProps> = ({ article }) => {
         </div>
       </div>
       <div className="prose lg:prose-xl max-w-none" dangerouslySetInnerHTML={{ __html: article.content }} />
+      <div className="mt-8">
+        <ShareButtons title={article.title} />
+      </div>
     </div>
   );
 };

@@ -354,6 +354,33 @@ export function getLatestArticles(count: number): Article[] {
 }
 
 /**
+ * Get related articles based on the current article's category.
+ * @param currentArticleSlug The slug of the article to find related articles for.
+ * @param count The number of related articles to return.
+ */
+export function getRelatedArticles(
+  currentArticleSlug: string,
+  count: number
+): Article[] {
+  const allArticles = getAllArticles();
+  const currentArticle = allArticles.find(
+    (article) => article.slug === currentArticleSlug
+  );
+
+  if (!currentArticle) {
+    return [];
+  }
+
+  return allArticles
+    .filter(
+      (article) =>
+        article.category.slug === currentArticle.category.slug &&
+        article.slug !== currentArticleSlug
+    )
+    .slice(0, count);
+}
+
+/**
  * Get articles by author
  */
 export function getArticlesByAuthor(authorName: string): Article[] {
