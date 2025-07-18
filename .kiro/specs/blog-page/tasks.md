@@ -30,7 +30,7 @@
   - Implement search query clearing functionality
   - _Requirements: 3.2, 3.3, 3.4, 3.5_
 
-- [-] 5. Create ArticleCard component
+- [ ] 5. Create ArticleCard component
 
   - Build responsive article card with image, title, excerpt, and metadata
   - Implement category badge styling with color coding

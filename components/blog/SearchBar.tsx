@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { XMarkIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
@@ -61,7 +61,7 @@ export default function SearchBar({
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <div
-          className={`relative flex items-center bg-white rounded-lg shadow-lg border-2 transition-all duration-200 ${isFocused ? "border-blue-500 shadow-xl" : "border-gray-200"
+          className={`relative flex items-center bg-white rounded-lg shadow-lg border-2 transition-all duration-200 ${isFocused ? "border-primary-500 shadow-xl" : "border-gray-200"
             }`}
         >
           <div className="flex items-center pl-4">
@@ -79,7 +79,6 @@ export default function SearchBar({
             aria-label="Search articles"
           />
 
-          {/* Clear button */}
           {value.trim() && (
             <button
               type="button"
@@ -93,7 +92,7 @@ export default function SearchBar({
 
           <button
             type="submit"
-            className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-r-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="hidden md:inline-block px-8 mr-0.5 py-4 bg-primary-600 text-white font-semibold rounded-r-lg hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             aria-label="Submit search"
           >
             Search
@@ -101,7 +100,6 @@ export default function SearchBar({
         </div>
       </motion.form>
 
-      {/* Results counter and status */}
       {typeof resultsCount === "number" && value.trim() && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -126,7 +124,6 @@ export default function SearchBar({
         </motion.div>
       )}
 
-      {/* Search suggestions when no results */}
       {typeof resultsCount === "number" && resultsCount === 0 && value.trim() && suggestions.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}

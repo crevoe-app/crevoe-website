@@ -27,6 +27,7 @@ export interface Article {
   featuredImage: FeaturedImage;
   slug: string;
   tags?: string[];
+  content: string;
 }
 
 export interface SearchState {

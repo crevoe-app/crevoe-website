@@ -64,7 +64,7 @@ export default function NoResultsMessage({
               <button
                 key={topic}
                 onClick={() => onSearch(topic)}
-                className="px-3 py-1 text-sm bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors duration-200"
+                className="px-3 py-1 text-sm bg-primary-50 text-primary-700 rounded-full hover:bg-primary-100 transition-colors duration-200"
               >
                 {topic}
               </button>

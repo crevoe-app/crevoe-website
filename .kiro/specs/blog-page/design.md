@@ -16,6 +16,9 @@ BlogPage
 ├── FeaturedArticles
 │   ├── ArticleCard[]
 │   └── NoResultsMessage
+├── HowItWorksCTA (existing)
+├── LatestArticles
+│   └── ArticleCard[]
 └── BlogLayout
     ├── Header (existing)
     └── Footer (existing)
@@ -89,6 +92,17 @@ interface FeaturedArticlesProps {
 interface ArticleCardProps {
   article: Article;
   searchQuery?: string; // For highlighting
+}
+```
+
+### LatestArticles Component
+
+**Purpose:** Display the 3 most recent articles after the how-it-works section
+**Props:**
+
+```typescript
+interface LatestArticlesProps {
+  articles: Article[]; // Limited to 3 most recent articles
 }
 ```
 

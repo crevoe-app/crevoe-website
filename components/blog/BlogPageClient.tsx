@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useCallback, useMemo } from "react";
 import BlogHero from "./BlogHero";
 import NoResultsMessage from "./NoResultsMessage";
@@ -9,16 +8,12 @@ import { searchArticlesEnhanced, getSearchSuggestions, getSearchCorrections } fr
 
 export default function BlogPageClient() {
   const [searchQuery, setSearchQuery] = useState("");
-
-  // Get all articles for search
   const allArticles = useMemo(() => getAllArticles(), []);
 
-  // Memoized filtered articles based on search query using enhanced search
   const filteredArticles = useMemo(() => {
     return searchArticlesEnhanced(searchQuery, allArticles);
   }, [searchQuery, allArticles]);
 
-  // Get search suggestions when no results found
   const searchSuggestions = useMemo(() => {
     if (searchQuery.trim() && filteredArticles.length === 0) {
       return getSearchSuggestions(searchQuery, allArticles);
@@ -26,7 +21,6 @@ export default function BlogPageClient() {
     return [];
   }, [searchQuery, filteredArticles.length, allArticles]);
 
-  // Get search corrections for potential typos
   const searchCorrections = useMemo(() => {
     if (searchQuery.trim() && filteredArticles.length === 0) {
       return getSearchCorrections(searchQuery, allArticles);
@@ -64,7 +58,6 @@ export default function BlogPageClient() {
           </h2>
 
           {searchQuery.trim() && filteredArticles.length === 0 ? (
-            // No results state with helpful messaging
             <NoResultsMessage
               searchQuery={searchQuery}
               onSearch={handleSearch}
@@ -72,7 +65,6 @@ export default function BlogPageClient() {
               suggestions={[...searchCorrections, ...searchSuggestions]}
             />
           ) : (
-            // Results or default state - Display articles in responsive grid
             <>
               {searchQuery.trim() && (
                 <div className="mb-6">
@@ -81,7 +73,7 @@ export default function BlogPageClient() {
                   </p>
                   <button
                     onClick={handleClearSearch}
-                    className="mt-2 text-sm text-blue-600 hover:text-blue-800 underline"
+                    className="mt-2 text-sm text-primary-600 hover:text-primary-800 underline"
                   >
                     Clear search to see all articles
                   </button>

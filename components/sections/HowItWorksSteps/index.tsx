@@ -41,7 +41,7 @@ const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -67,7 +67,6 @@ const HowItWorksSteps: React.FC<HowItWorksStepsProps> = ({
 
         {/* Steps with Timeline */}
         <div className="relative">
-          {/* Timeline Line - Left Side */}
           <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-1 bg-gray-200">
             <motion.div
               className="absolute top-0 left-0 w-full bg-primary-500 origin-top"

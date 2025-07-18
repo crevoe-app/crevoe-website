@@ -62,7 +62,6 @@ const HowItWorksHero = ({
             className="relative"
           >
             <div className="relative w-full h-96 lg:h-[650px]">
-              {/* Main background image */}
               {images[0] && (
                 <div className="absolute inset-0 rounded-2xl overflow-hidden flex justify-end">
                   <Image
@@ -75,7 +74,6 @@ const HowItWorksHero = ({
                 </div>
               )}
 
-              {/* Overlay insight card */}
               {images[1] && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}

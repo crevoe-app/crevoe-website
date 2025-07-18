@@ -91,7 +91,20 @@ This document outlines the requirements for implementing a comprehensive blog pa
 4. WHEN categories are assigned THEN the system SHALL use predefined category types with consistent styling
 5. WHEN article images are processed THEN the system SHALL optimize for web performance and responsive display
 
-### Requirement 8: Performance and Accessibility
+### Requirement 8: Latest Articles Section
+
+**User Story:** As a reader, I want to see the latest articles after the how-it-works section, so that I can discover the most recent content.
+
+#### Acceptance Criteria
+
+1. WHEN a user scrolls past the how-it-works section THEN the system SHALL display a "Latest Articles" section
+2. WHEN the latest articles section loads THEN the system SHALL show exactly 3 articles using the ArticleCard component structure
+3. WHEN latest articles are displayed THEN the system SHALL show the 3 most recently published articles
+4. WHEN the latest articles section renders THEN the system SHALL use the same responsive grid layout as the featured articles (3 columns on desktop, 2 on tablet, 1 on mobile)
+5. WHEN the section header displays THEN the system SHALL show "Latest Articles" as the title
+6. WHEN article cards in this section render THEN the system SHALL use the same ArticleCard component with identical styling and functionality
+
+### Requirement 9: Performance and Accessibility
 
 **User Story:** As any user, I want the blog page to load quickly and be accessible, so that I can have a smooth browsing experience.
 

@@ -7,7 +7,7 @@ import AnimatedLogo from './AnimatedLogo';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative sm:min-h-screen max-h-[85vh] bg-gradient-to-br from-gray-50 to-blue-50 lg:pt-16 pt-8 overflow-hidden">
+    <section className="relative sm:min-h-screen max-h-[85vh] bg-gradient-to-br from-gray-50 to-primary-50 lg:pt-16 pt-8 overflow-hidden">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 pt-0 lg:pt-20">
         <div className="text-center relative z-10 mt-0 lg:mt-20">
           <div className="mb-6 sm:mb-8">
