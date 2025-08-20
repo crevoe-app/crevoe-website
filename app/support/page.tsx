@@ -17,7 +17,7 @@ export default function SupportPage() {
             {/* Left Column */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Got Questions? We've Got You Covered!</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Got Questions? We&apos;ve Got You Covered!</h2>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   We would like to hear from you! Whether you have questions, need assistance, or simply want to share
                   feedback, reach out to us.
