@@ -57,7 +57,7 @@ const Footer = () => {
             <div className='flex flex-col sm:flex-row items-center justify-between w-full gap-4 sm:gap-0'>
               <p className='text-white text-sm sm:text-base'>&copy; 2025</p>
               <div className='flex items-center gap-3 sm:gap-4'>
-                <Link href={"#"} className='text-white hover:underline text-sm sm:text-base'>Terms</Link>
+                <Link href="/terms-condition" className='text-white hover:underline text-sm sm:text-base'>Terms</Link>
                 <Link href={"#"} className='text-white hover:underline text-sm sm:text-base'>Contact</Link>
               </div>
               <div>

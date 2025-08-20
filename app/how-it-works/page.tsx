@@ -9,9 +9,10 @@ import Faq from '@/components/sections/Faq';
 
 const HowItWorks = () => {
   const heroContent = {
-    title: "Lorem ipsum Lorem ipsum",
-    subtitle: "Lorem ipsum",
-    description: "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+    title: "Your Next",
+    subtitle: "Big Move ",
+    cont: "Starts Here",
+    description: " From your first lesson idea to your first payment, Crevoe is designed to guide you from \"I want to teach\" to \"I'm earning consistently\" without the complexity of multiple tools.",
     ctaText: "Start Creating",
     ctaLink: "#",
     images: [
