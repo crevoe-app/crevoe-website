@@ -21,7 +21,7 @@ const CourseManagementCard = () => {
         >
           <motion.div
             className="absolute w-60 h-64 rounded-2xl overflow-hidden bg-contain bg-no-repeat bg-center"
-            style={{ backgroundImage: "url('./assets/RetroStars.svg')" }}
+            style={{ backgroundImage: "url('/retro.svg')" }}
             variants={{
               initial: { x: -30, rotate: 2, zIndex: 2 },
               hover: { x: -30, rotate: -4, zIndex: 2 }

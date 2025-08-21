@@ -1,8 +1,6 @@
 import React from 'react'
-import InfiniteCards from './InfiniteMovingButtons'
-import CreateMarketSell from './CreateMarketSell'
-import CourseModule from './CourseModule'
 import { motion } from 'framer-motion';
+import TabSystem from './TabSystem';
 
 const EverythingYouNeed = () => {
   return (
@@ -45,28 +43,10 @@ const EverythingYouNeed = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <InfiniteCards />
+         <TabSystem/>
         </motion.div>
 
-        {/* Main Content Grid */}
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          {/* Create Market Sell - Full width on mobile, half on desktop */}
-          <div className="w-full">
-            <CreateMarketSell />
-          </div>
 
-          {/* Course Module - Full width on mobile, half on desktop */}
-          <div className="w-full">
-            <CourseModule />
-          </div>
-        </motion.div>
-
-        {/* Additional Mobile Spacing */}
         <div className="h-8 sm:h-12 lg:h-16"></div>
       </div>
 

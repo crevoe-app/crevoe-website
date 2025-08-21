@@ -85,7 +85,7 @@ const VideoConferencingCard = () => {
               transition={{ duration: 0.2, ease: "easeOut" }}
             >
               <motion.img
-                src={"/call.png"}
+                src={"/blackman.svg"}
                 alt='call'
                 className='object-cover w-[310px] h-[340px]'
                 variants={{
