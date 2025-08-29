@@ -5,6 +5,8 @@ import LearnTerms from "@/components/sections/LearnTerms";
 import EverythingYouNeed from "@/components/sections/EverythingYouNeed";
 import WhatPeopleAreSaying from "@/components/sections/WhatPeopleAreSaying";
 import Faq from "@/components/sections/Faq";
+import ComingToMobile from "@/components/sections/EverythingYouNeed/ComingToMobile";
+import { CourseCards } from "@/components/sections/ExploreCourses";
 
 export default function Home() {
   return (
@@ -12,7 +14,9 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <LearnTerms />
-      <EverythingYouNeed />
+      {/* <EverythingYouNeed /> */}
+      <ComingToMobile />
+      <CourseCards/>
       <WhatPeopleAreSaying />
       <Faq />
     </div>

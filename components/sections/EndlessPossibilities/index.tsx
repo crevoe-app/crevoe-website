@@ -5,6 +5,8 @@ import CommunityCard from './Community';
 import EventSchedulingCard from './EventSchedulingCard';
 import ContentDiscoveryCard from './ContentDiscoveryCard';
 import { motion } from 'framer-motion';
+import VideoCommunitySection from './VideoCommunity';
+import LmsSection from './LmsSection';
 
 const FeaturesSection: React.FC = () => {
 
@@ -25,49 +27,12 @@ const FeaturesSection: React.FC = () => {
         </p>
       </motion.div>
 
-      {/* Mobile Layout (< lg) */}
-      <div className='lg:hidden flex flex-col gap-4'>
-        <div className='w-full'>
+     
           <CourseManagementCard />
-        </div>
-        <div className='w-full mb-6'>
-          <VideoConferencingCard />
-        </div>
-        <div className='w-full'>
-          <CommunityCard />
-        </div>
-        <div className='w-full'>
-          <EventSchedulingCard />
-        </div>
-        <div className='w-full'>
-          <ContentDiscoveryCard />
-        </div>
-      </div>
+          <VideoCommunitySection/>
+          <LmsSection/>
 
-      {/* Desktop Layout (>= lg) */}
-      <div className='hidden lg:flex gap-4 items-stretch h-[80vh]'>
-        <div className='basis-[25%] h-full'>
-          <CourseManagementCard />
-        </div>
-        <div className='h-full flex-1 flex flex-col justify-between items-center gap-4'>
-          <div className='flex items-center justify-between gap-4 basis-6/12 w-full'>
-            <div className='basis-8/12'>
-              <VideoConferencingCard />
-            </div>
-            <div className='flex-1 mt-2'>
-              <CommunityCard />
-            </div>
-          </div>
-          <div className='flex items-stretch justify-between gap-4 flex-1 w-full'>
-            <div className='basis-4/12'>
-              <EventSchedulingCard />
-            </div>
-            <div className='flex-1'>
-              <ContentDiscoveryCard />
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 };

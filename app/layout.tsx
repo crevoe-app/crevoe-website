@@ -3,6 +3,7 @@ import { Karla } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/sections/Footer";
 import "./globals.css";
+import Chatbox from "@/components/ChatBox";
 
 const karla = Karla({
   variable: "--font-karla",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col">
           <div className="pt-24 flex-1">
             {children}
+            <Chatbox />
           </div>
         </main>
         <Footer />

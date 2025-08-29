@@ -37,13 +37,13 @@ const HowItWorksHero = ({
             className="space-y-6"
           >
             <div className="space-y-4">
-              <h1 className="text-6xl lg:text-5 font-bold text-gray-900 leading-tight">
+              <h1 className="md:text-6xl text-3xl lg:text-5 font-bold text-gray-900 leading-tight">
                 {title}{' '}
                 <span className="text-primary-500">{subtitle}</span>
               </h1>
-              <h2 className='text-6xl lg:text-5 font-bold  text-gray-900 leading-tight'> {cont} </h2>
+              <h2 className='md:text-6xl text-2xl lg:text-5 font-bold  text-gray-900 leading-tight'> {cont} </h2>
 
-              <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
+              <p className="md:text-lg text-gray-600 leading-relaxed max-w-lg">
                 {description}
               </p>
             </div>

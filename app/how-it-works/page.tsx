@@ -6,6 +6,8 @@ import HowItWorksCTA from '@/components/sections/HowItWorksCTA';
 import { motion } from 'framer-motion';
 import AnimatedLogo from '@/components/AnimatedLogo';
 import Faq from '@/components/sections/Faq';
+import LearningResourcesPage from '@/components/sections/EssentialTips';
+import EssentialTips from '@/components/sections/EssentialTips';
 
 const HowItWorks = () => {
   const heroContent = {
@@ -59,6 +61,7 @@ const HowItWorks = () => {
     <>
       <HowItWorksHero {...heroContent} />
       <HowItWorksSteps {...stepsContent} />
+      <EssentialTips  />
       <HowItWorksCTA>
         <div className="text-center space-y-8">
           {/* Animated Logo */}

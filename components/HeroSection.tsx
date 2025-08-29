@@ -31,8 +31,7 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
           >
-            Crevoe is the all-in-one platform where creators build powerful courses, learners grow
-            in engaged communities, and everyone thrives together.
+           Crevoe is where creators and learners come together to share knowledge, spark growth, and thrive as a community.
           </motion.p>
 
           <motion.div
@@ -46,14 +45,7 @@ const HeroSection: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="w-full sm:w-auto bg-primary-500 font-semibold text-white px-8 sm:px-6 py-3 sm:py-2 rounded-full hover:bg-primary-600 border border-primary-600 transition-colors"
             >
-              Start Creating
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto bg-white font-semibold text-black px-8 sm:px-10 py-3 sm:py-2 rounded-full border border-primary-400 transition-colors"
-            >
-              Browse Courses
+              Download App
             </motion.button>
           </motion.div>
         </div>

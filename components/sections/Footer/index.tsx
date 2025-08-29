@@ -60,9 +60,6 @@ const Footer = () => {
                 <Link href="/terms-condition" className='text-white hover:underline text-sm sm:text-base'>Terms</Link>
                 <Link href={"#"} className='text-white hover:underline text-sm sm:text-base'>Contact</Link>
               </div>
-              <div>
-                <p className='text-white text-sm sm:text-base'>Site by JG</p>
-              </div>
             </div>
           </div>
         </div>

@@ -15,35 +15,35 @@ const people: Person[] = [
   {
     id: 1,
     name: "Adewale Ogunyebi",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+    image: "/people1.png",
     rotation: "-rotate-2",
     description: "Find the perfect course with advanced filters and recommendations. Find the perfect course with advanced filters and recommendations."
   },
   {
     id: 2,
     name: "Marcus Johnson",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+    image: "/people2.png",
     rotation: "rotate-1",
     description: "Transforming education through innovative teaching methods and personalized learning experiences that adapt to every student's needs."
   },
   {
     id: 3,
     name: "David Thompson",
-    image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+    image: "/people3.png",
     rotation: "-rotate-1",
     description: "Creating engaging content that helps students achieve their goals while building confidence in their abilities and skills."
   },
   {
     id: 4,
     name: "Michael Brown",
-    image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+    image: "/people4.png",
     rotation: "rotate-2",
     description: "Empowering learners with cutting-edge tools and resources that make complex topics accessible and enjoyable to master."
   },
   {
     id: 5,
     name: "Amara Williams",
-    image: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop",
+    image: "/people5.png",
     rotation: "-rotate-1",
     description: "Bridging the gap between traditional education and modern learning through interactive experiences and community building."
   },
