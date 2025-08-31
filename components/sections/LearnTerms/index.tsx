@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import LearnSkill from '@/components/LeanSkill';
-import { useIsMobile } from '@/hooks/useIsMobile';
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import LearnSkill from "@/components/LeanSkill";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const LearnTerms = () => {
   const ref = useRef(null);
@@ -17,49 +17,49 @@ const LearnTerms = () => {
       image: "/assets/learnTerms/entertainment.png",
       label: "Entertainment",
       bgColor: "bg-skill-entertainment",
-      size: "tall"
+      size: "tall",
     },
     {
       image: "/assets/learnTerms/culinary-subscription.png",
       label: "Culinary Subscriptions",
       bgColor: "bg-skill-culinary",
-      size: "square"
+      size: "square",
     },
     {
       image: "/assets/learnTerms/active-life.png",
       label: "Active Life",
       bgColor: "bg-skill-active",
-      size: "tall"
+      size: "tall",
     },
     {
       image: "/assets/learnTerms/dental-care.png",
       label: "Dental Care",
       bgColor: "bg-skill-dental",
-      size: "square"
+      size: "square",
     },
     {
       image: "/assets/learnTerms/training.png",
       label: "Training",
       bgColor: "bg-skill-training",
-      size: "tall"
+      size: "tall",
     },
     {
       image: "/assets/learnTerms/personal-care.png",
       label: "Personal Care",
       bgColor: "bg-skill-personal",
-      size: "square"
+      size: "square",
     },
     {
       image: "/assets/learnTerms/mental-health.png",
       label: "Mental Health",
       bgColor: "bg-skill-mental",
-      size: "tall"
+      size: "tall",
     },
     {
       image: "/assets/learnTerms/pets.png",
       label: "Pets",
       bgColor: "bg-skill-pets",
-      size: "square"
+      size: "square",
     },
   ];
 
@@ -114,10 +114,11 @@ const LearnTerms = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-foreground">
-            Learn on your terms.
+            Your Creative Lab is Open
           </h2>
           <p className="text-muted-foreground mb-8 text-sm sm:text-base leading-relaxed">
-            From skill-building to soul-growing, discover courses that meet you where you are.
+            From skill-building to soul-growing, discover courses that meet you
+            where you are.
           </p>
           <motion.button
             whileTap={{ scale: 0.98 }}
@@ -141,9 +142,13 @@ const LearnTerms = () => {
                 <motion.img
                   src={skill.image}
                   alt={skill.label}
-                  className={`w-full ${skill.size === 'tall' ? 'h-32 sm:h-36' : 'h-24 sm:h-28'} object-cover rounded-lg`}
+                  className={`w-full ${
+                    skill.size === "tall" ? "h-32 sm:h-36" : "h-24 sm:h-28"
+                  } object-cover rounded-lg`}
                 />
-                <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 ${skill.bgColor} rounded-full px-3 py-1 shadow-sm`}>
+                <div
+                  className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 ${skill.bgColor} rounded-full px-3 py-1 shadow-sm`}
+                >
                   <p className="text-xs font-medium text-center whitespace-nowrap">
                     {skill.label}
                   </p>
@@ -168,10 +173,11 @@ const LearnTerms = () => {
         transition={{ duration: 0.5, delay: 0.7 }}
       >
         <h2 className="text-5xl font-semibold mb-6 text-foreground">
-          Learn on your terms.
+          Your Creative Lab is Open
         </h2>
         <p className="w-8/12 my-8 mx-auto flex items-center justify-center text-center text-muted-foreground">
-          From skill-building to soul-growing, discover courses that meet you where you are.
+          From skill-building to soul-growing, discover courses that meet you
+          where you are.
         </p>
         <motion.button
           whileTap={{ scale: 0.98 }}
@@ -184,7 +190,9 @@ const LearnTerms = () => {
       {skills.map((skill, index) => {
         const isRightSide = index >= 4;
         const position = desktopPositions[index];
-        const initial = isRightSide ? initialPositionRight : initialPositionLeft;
+        const initial = isRightSide
+          ? initialPositionRight
+          : initialPositionLeft;
 
         return (
           <LearnSkill
@@ -197,28 +205,48 @@ const LearnTerms = () => {
               <motion.img
                 src={skill.image}
                 alt={skill.label}
-                className={skill.size === 'tall' ? "w-40 h-52 object-cover rounded-lg" : "h-32 w-32 object-cover rounded-lg"}
+                className={
+                  skill.size === "tall"
+                    ? "w-40 h-52 object-cover rounded-lg"
+                    : "h-32 w-32 object-cover rounded-lg"
+                }
               />
               <div
-                className={`absolute ${index === 0 ? '-bottom-2' :
-                  index === 1 ? '-left-4 -bottom-2' :
-                    index === 2 ? '-top-2' :
-                      index === 3 ? '-left-2 -bottom-2' :
-                        index === 4 ? '-left-2 -bottom-2' :
-                          index === 5 ? '-right-2 -top-2' :
-                            index === 6 ? '-bottom-2' :
-                              '-left-2 -top-2'
-                  } ${skill.bgColor} rounded-full px-4 py-2 text-xs text-center font-medium shadow-sm`}
+                className={`absolute ${
+                  index === 0
+                    ? "-bottom-2"
+                    : index === 1
+                    ? "-left-4 -bottom-2"
+                    : index === 2
+                    ? "-top-2"
+                    : index === 3
+                    ? "-left-2 -bottom-2"
+                    : index === 4
+                    ? "-left-2 -bottom-2"
+                    : index === 5
+                    ? "-right-2 -top-2"
+                    : index === 6
+                    ? "-bottom-2"
+                    : "-left-2 -top-2"
+                } ${
+                  skill.bgColor
+                } rounded-full px-4 py-2 text-xs text-center font-medium shadow-sm`}
                 style={{
-                  width: index === 1 || index === 3 ? '120%' :
-                    index === 2 || index === 4 || index === 7 ? '60%' :
-                      '90%',
-                  marginLeft: index === 0 || index === 6 ? '5%' :
-                    index === 2 || index === 7 ? '20%' :
-                      'auto'
+                  width:
+                    index === 1 || index === 3
+                      ? "120%"
+                      : index === 2 || index === 4 || index === 7
+                      ? "60%"
+                      : "90%",
+                  marginLeft:
+                    index === 0 || index === 6
+                      ? "5%"
+                      : index === 2 || index === 7
+                      ? "20%"
+                      : "auto",
                 }}
               >
-                <p className='text-center'>{skill.label}</p>
+                <p className="text-center">{skill.label}</p>
               </div>
             </div>
           </LearnSkill>

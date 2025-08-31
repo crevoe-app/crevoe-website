@@ -11,10 +11,10 @@ import EssentialTips from '@/components/sections/EssentialTips';
 
 const HowItWorks = () => {
   const heroContent = {
-    title: "Your Next",
-    subtitle: "Big Move ",
-    cont: "Starts Here",
-    description: " From your first lesson idea to your first payment, Crevoe is designed to guide you from \"I want to teach\" to \"I'm earning consistently\" without the complexity of multiple tools.",
+    title: "Everything You Need to Build on",
+    subtitle: "Crevoe",
+    // cont: "Starts Here",
+    description: "From how-to guides and templates to real creator stories, Crevoe gives you the playbook to turn your knowledge into impact and income; step by step.",
     ctaText: "Start Creating",
     ctaLink: "#",
     images: [
@@ -60,7 +60,7 @@ const HowItWorks = () => {
   return (
     <>
       <HowItWorksHero {...heroContent} />
-      <HowItWorksSteps {...stepsContent} />
+      {/* <HowItWorksSteps {...stepsContent} /> */}
       <EssentialTips  />
       <HowItWorksCTA>
         <div className="text-center space-y-8">

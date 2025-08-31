@@ -41,7 +41,7 @@ export default function BlogPageClient() {
   return (
     <>
       <BlogHero
-        title="Creveo Blog"
+        title="Crevoe Blog"
         description="Insights, tips, and stories from the world of online learning and education technology"
         onSearch={handleSearch}
         onClear={handleClearSearch}

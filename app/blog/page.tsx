@@ -31,7 +31,7 @@ export default function BlogPage() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight"
           >
-            Stay Updated with Creveo
+            Stay Updated with Crevoe
           </motion.h2>
 
           {/* Description */}
