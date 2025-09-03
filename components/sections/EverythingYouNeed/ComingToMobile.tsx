@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import HowItWorksCTA from "../HowItWorksCTA";
 import AnimatedLogo from "@/components/AnimatedLogo";
+import Link from "next/link";
 
 const ComingToMobile = () => {
   return (
@@ -58,7 +59,10 @@ const ComingToMobile = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white hover:bg-gray-50 text-primary-700 font-semibold md:px-14 px-5 py-2 rounded-full md:text-lg text-sm transition-all duration-300 shadow-lg hover:shadow-xl"
               >
+              <Link href="https://app.crevoe.com/socials" target="_blank" rel="noopener noreferrer">
+                
                 Get started
+                </Link>
               </motion.button>
             </motion.div>
           </div>

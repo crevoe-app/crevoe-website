@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import LearnSkill from "@/components/LeanSkill";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import Link from "next/link";
 
 const LearnTerms = () => {
   const ref = useRef(null);
@@ -124,7 +125,9 @@ const LearnTerms = () => {
             whileTap={{ scale: 0.98 }}
             className="w-full sm:w-auto px-8 bg-primary-500 font-semibold text-white py-3 rounded-full hover:bg-primary-500 border border-primary-400 transition-colors"
           >
+             <Link href="https://app.crevoe.com/socials" target="_blank" rel="noopener noreferrer">
             Explore All Categories
+            </Link>
           </motion.button>
         </motion.div>
 
@@ -183,7 +186,10 @@ const LearnTerms = () => {
           whileTap={{ scale: 0.98 }}
           className="w-5/12 bg-primary-500 font-semibold text-white py-3 rounded-full hover:bg-primary-600 border border-primary-400 transition-colors"
         >
+             <Link href="https://app.crevoe.com/socials" target="_blank" rel="noopener noreferrer">
+
           Explore All Categories
+          </Link>
         </motion.button>
       </motion.div>
 

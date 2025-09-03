@@ -40,7 +40,9 @@ const Footer = () => {
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto bg-primary-500 font-semibold text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-primary-600 border border-primary-600 transition-colors text-sm sm:text-base"
               >
+                <Link href="https://app.crevoe.com/auth?tab=signup" target="_blank" rel="noopener noreferrer">
                 Create free Account
+                </Link>
               </motion.button>
 
               <motion.button
@@ -48,7 +50,9 @@ const Footer = () => {
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto bg-transparent font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-full border transition-colors text-white text-sm sm:text-base"
               >
+                <Link href="https://app.crevoe.com/market" target="_blank" rel="noopener noreferrer">
                 Browse Courses
+                </Link>
               </motion.button>
             </div>
           </div>

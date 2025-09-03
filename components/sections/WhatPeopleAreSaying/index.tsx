@@ -1,5 +1,6 @@
 import React from 'react'
 import People from './People'
+import Link from 'next/link';
 
 const WhatPeopleAreSaying = () => {
   return (
@@ -24,10 +25,14 @@ const WhatPeopleAreSaying = () => {
         <div className="text-center mt-12 sm:mt-16 lg:mt-20">
           <div className="inline-flex flex-col sm:flex-row gap-4 sm:gap-6">
             <button className="px-6 py-3 sm:px-8 sm:py-4 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-700 transition-colors duration-200 text-sm sm:text-base">
+              <Link href="https://app.crevoe.com/auth?tab=signup" target="_blank" rel="noopener noreferrer">
               Start Learning Today
+              </Link>
             </button>
             <button className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-primary-600 text-primary-600 font-semibold rounded-full hover:bg-primary-50 transition-colors duration-200 text-sm sm:text-base">
+              <Link href="https://app.crevoe.com/studio" target="_blank" rel="noopener noreferrer">
               Become an Instructor
+              </Link>
             </button>
           </div>
         </div>

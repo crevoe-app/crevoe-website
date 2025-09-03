@@ -2,7 +2,7 @@
 import React from 'react';
 import FloatingElement from './FloatingElement';
 import { motion } from 'framer-motion';
-import { Video, Users, ShoppingBag, MessageSquare } from 'lucide-react';
+import { Video, Users, ShoppingBag, MessageSquare, Link } from 'lucide-react';
 import AnimatedLogo from './AnimatedLogo';
 
 const HeroSection: React.FC = () => {
@@ -11,7 +11,9 @@ const HeroSection: React.FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 pt-0 lg:pt-20">
         <div className="text-center relative z-10 mt-0 lg:mt-20">
           <div className="mb-6 sm:mb-8">
+             <a href="https://app.crevoe.com/auth?tab=signin" target="_blank" rel="noopener noreferrer">  
             <AnimatedLogo />
+            </a>
           </div>
 
           <motion.h1

@@ -121,14 +121,18 @@ export const Header = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-white font-semibold text-black px-6 lg:px-10 py-2 rounded-full border border-primary-400 transition-colors"
             >
+             <Link href="https://app.crevoe.com/auth?tab=signin" target="_blank" rel="noopener noreferrer">
               Login
+              </Link>
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-primary-500 font-semibold text-white px-4 lg:px-6 py-2 rounded-full hover:bg-primary-600 border border-primary-600 transition-colors"
             >
+               <Link href="https://app.crevoe.com/auth?tab=signup" target="_blank" rel="noopener noreferrer">
               Create Account
+              </Link>
             </motion.button>
           </div>
 

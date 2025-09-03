@@ -1,6 +1,7 @@
 import { Star } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const courses = [
   {
@@ -76,7 +77,10 @@ export function CourseCards() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white hover:bg-gray-50 text-primary-700 font-semibold px-14 py-2 rounded-full md:text-lg text-xs transition-all duration-300 shadow-lg hover:shadow-xl"
               >
+              <Link href="https://app.crevoe.com/market" target="_blank" rel="noopener noreferrer">
+                
                 Explore Courses
+                </Link>
               </motion.button>
             </motion.div>
         </div>
