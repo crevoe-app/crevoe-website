@@ -47,7 +47,9 @@ const HeroSection: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="w-full sm:w-auto bg-primary-500 font-semibold text-white px-8 sm:px-6 py-3 sm:py-2 rounded-full hover:bg-primary-600 border border-primary-600 transition-colors"
             >
-              Download App
+              <a href="https://app.crevoe.com/socials" target="_blank" rel="noopener noreferrer">
+              Explore Now
+              </a>
             </motion.button>
           </motion.div>
         </div>

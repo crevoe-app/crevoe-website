@@ -236,14 +236,18 @@ export const Header = () => {
                     className="w-full bg-white font-semibold text-black py-3 rounded-full border border-primary-400 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
+             <Link href="https://app.crevoe.com/auth?tab=signin" target="_blank" rel="noopener noreferrer">
                     Login
+                    </Link>
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.98 }}
                     className="w-full bg-primary-500 font-semibold text-white py-3 rounded-full hover:bg-primary-600 border border-primary-400 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
+               <Link href="https://app.crevoe.com/auth?tab=signup" target="_blank" rel="noopener noreferrer">
                     Create Account
+                    </Link>
                   </motion.button>
                 </div>
               </div>
