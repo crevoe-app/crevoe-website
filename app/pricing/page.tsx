@@ -6,6 +6,7 @@ import PricingSection from '@/components/sections/PricingSection';
 import PricingComparison from '@/components/sections/PricingComparison';
 import HowItWorksCTA from '@/components/sections/HowItWorksCTA';
 import Faq from '@/components/sections/Faq';
+import { Link } from 'lucide-react';
 
 const Pricing = () => {
   return (
@@ -55,16 +56,22 @@ const Pricing = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="pt-4"
           >
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(255, 255, 255, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white hover:bg-gray-50 text-primary-700 font-semibold px-14 py-2 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            <a
+              href="https://app.crevoe.com/socials/subscription-management?tab=crevoe+plans"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Find my plan
-            </motion.button>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(255, 255, 255, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white hover:bg-gray-50 text-primary-700 font-semibold px-14 py-2 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Find my plan
+              </motion.button>
+            </a>
           </motion.div>
         </div>
       </HowItWorksCTA>

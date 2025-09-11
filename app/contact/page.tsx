@@ -30,7 +30,7 @@ export default function SupportPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-gray-600">contact@creveo.com</p>
+                  <p className="text-gray-600">support@creveo.com</p>
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export default function SupportPage() {
 
             {/* Right Column - Contact Form */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-blue-600 mb-6">Get in touch</h3>
+              <h3 className="text-xl font-semibold text-primary-600 mb-6">Get in touch</h3>
 
               <form className="space-y-6">
                 <div>

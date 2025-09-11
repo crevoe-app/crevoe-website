@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { Link } from 'lucide-react';
 
 interface HowItWorksHeroProps {
   title: string;
@@ -53,7 +54,9 @@ const HowItWorksHero = ({
               whileTap={{ scale: 0.95 }}
               className="bg-primary-500 hover:bg-primary-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200"
             >
+              <a href="https://app.crevoe.com/studio" target="_blank" rel="noopener noreferrer"> 
               {ctaText}
+              </a>
             </motion.button>
           </motion.div>
 
