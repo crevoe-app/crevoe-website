@@ -61,6 +61,7 @@ const Footer = () => {
             <div className='flex flex-col sm:flex-row items-center justify-between w-full gap-4 sm:gap-0'>
               <p className='text-white text-sm sm:text-base'>&copy; 2025</p>
               <div className='flex items-center gap-3 sm:gap-4'>
+                <Link href="/info/about" className='text-white hover:underline text-[8px] md:text-sm sm:text-base'>About</Link>
                 <Link href="/terms-condition" className='text-white hover:underline text-[8px] md:text-sm sm:text-base'>Terms</Link>
                 <Link href="/contact" className='text-white hover:underline text-[8px] md:text-sm sm:text-base'>Contact</Link>
                 <Link href="/info/privacy" className='text-white text-[8px] hover:underline md:text-sm sm:text-base'>Privacy</Link>
