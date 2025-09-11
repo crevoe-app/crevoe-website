@@ -1,4 +1,3 @@
-import GenericImage from "@/components/GenericImage";
 
 export default function KeyFeatures() {
   return (
@@ -12,7 +11,7 @@ export default function KeyFeatures() {
         <div className="col-span-12 lg:col-span-3 space-y-6">
           {/* Digital Product card */}
           <div className="relative h-[280px] w-full">
-            <GenericImage
+            <img
               src="/assets/digital.png"
               width={400}
               height={300}
@@ -25,7 +24,7 @@ export default function KeyFeatures() {
 
           {/* Person on couch image */}
           <div className="relative mt-4">
-            <GenericImage
+            <img
               src="/assets/lady.png"
               width={400}
               height={300}
@@ -38,7 +37,7 @@ export default function KeyFeatures() {
         {/* Center section - large image */}
         <div className="col-span-12 lg:col-span-3 flex justify-center">
           <div className="relative h-full w-full">
-            <GenericImage
+            <img
               src="/assets/boy.png"
               width={400}
               height={600}
@@ -54,7 +53,7 @@ export default function KeyFeatures() {
           <div className="flex gap-5">
             <div className="bg-gray-50 p-6 rounded-xl">
               <div className="mb-4">
-                <GenericImage
+                <img
                   src="/assets/ai.png"
                   width={250}
                   height={150}
@@ -70,7 +69,7 @@ export default function KeyFeatures() {
 
             {/* Woman with phone image */}
             <div className="">
-              <GenericImage
+              <img
                 src="/assets/oldwoman.png"
                 width={400}
                 height={600}
@@ -98,7 +97,7 @@ export default function KeyFeatures() {
                     borderRadius: "40px / 50px",
                   }}
                 >
-                  <GenericImage
+                  <img
                     src="/assets/heroimg1.png"
                     width={60}
                     height={80}

@@ -1,5 +1,4 @@
 import KeyFeatures from "./_components/key-features";
-import GenericImage from "@/components/GenericImage";
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12">
@@ -17,7 +16,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="flex items-center justify-center">
-          <GenericImage
+          <img
             src="/assets/heroimg1.png"
             alt="People using Crevoe platform"
             width={500}
