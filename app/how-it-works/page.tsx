@@ -8,6 +8,7 @@ import AnimatedLogo from '@/components/AnimatedLogo';
 import Faq from '@/components/sections/Faq';
 import LearningResourcesPage from '@/components/sections/EssentialTips';
 import EssentialTips from '@/components/sections/EssentialTips';
+import Link from 'next/link';
 
 const HowItWorks = () => {
   const heroContent = {
@@ -113,7 +114,9 @@ const HowItWorks = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-white hover:bg-gray-50 text-primary-700 font-semibold px-14 py-2 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
+              <Link href="https://app.crevoe.com/socials" target="_blank" rel="noopener noreferrer">
               Get started
+              </Link>
             </motion.button>
           </motion.div>
         </div>

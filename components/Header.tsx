@@ -87,16 +87,16 @@ export const Header = () => {
                       Blog
                     </Link>
                     <Link
-                      href="/support"
+                      href="/contact"
                       className={`flex items-center px-4 py-2 text-sm transition-colors ${
-                        isActive("/support")
+                        isActive("/contact")
                           ? "text-primary-500 bg-primary-50"
                           : "text-gray-700 hover:text-primary-500 hover:bg-gray-50"
                       }`}
                       onClick={() => setIsResourcesOpen(false)}
                     >
                       <Headphones className="w-4 h-4 mr-2" />
-                      Support
+                      Contact
                     </Link>
                   </motion.div>
                 )}
@@ -207,14 +207,14 @@ export const Header = () => {
                       Blog
                     </Link>
                     <Link
-                      href="/support"
+                      href="/contact"
                       className={`flex items-center py-2 hover:bg-gray-50 rounded-md transition-colors ${
                         isActive("/support") ? "text-primary-500" : "text-gray-700 hover:text-primary-500"
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <Headphones className="w-4 h-4 mr-2" />
-                      Support
+                      Contact
                     </Link>
                   </div>
                 </div>
